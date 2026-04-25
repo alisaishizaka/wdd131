@@ -1,0 +1,48 @@
+body {
+    background-color: rgb(70, 70, 148);
+}
+.content {
+    background-color:white;
+    max-width: 750px;
+    margin: 50px 100px;
+    border: 1px solid black;
+    text-align: center;
+    justify-self: center;
+    padding: 70px 210px;
+    line-height: 1.3;
+}
+
+header {
+    font-size: 1.5em;
+    letter-spacing: 2px;
+}
+
+header h5 {
+    color: rgb(0, 115, 255);
+    margin-top: -10px;
+}
+
+hr {
+    margin-top: -30px;
+    margin-bottom: 50px;
+}
+
+.italic {
+    font-style: italic;
+}
+
+p, ol {
+    font-size: 25px;
+    text-align: left;
+}
+
+li {
+    margin-top: 30px;
+}
+
+img {
+    width: 200px;
+    margin-top: 50px;
+}
+
+
