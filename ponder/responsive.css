@@ -45,6 +45,7 @@ nav a:hover {
     margin: 5px 0;
 }
 footer {
+    display: flex;
     text-align: left;
 }
 
