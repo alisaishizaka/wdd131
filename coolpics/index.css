@@ -12,16 +12,20 @@ body {
     color: white;
 }
 
+header {
+    padding-bottom: 1rem;
+}
 .menu-btn {
     color: white;
     font-size: 1.5em;
     border: none;
-    background-color: transparent;   
+    background-color: transparent;  
 }
 
 nav a {
     color: white;
     display: none;
+    padding: 0 1rem;
 }
 
 main {
