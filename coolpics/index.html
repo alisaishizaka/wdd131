@@ -6,13 +6,14 @@
     <title>Cool Pics - Responsive Menu and Media Queries</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="index.css">
+    <script defer src="index.js"></script>
 </head>
 <body>
     <div class="content">
     <header>
   <h1>Cool Pics📷</h1>
   <button class="menu-btn">Menu</button>
-  <nav>
+  <nav class="hide">
     <a href="#">Home</a>
     <a href="#">People</a>
     <a href="#">Places</a>
@@ -21,18 +22,26 @@
   </nav>
 </header>
 <main>
+  <dialog>
+        <img>
+        <button class="close-viewer">X</button>
+    </dialog>
     <h2>Current Work</h2>
 <section class="photos">
-  <img src="images/norris-sm.jpg" alt="Photo of Steaming geothermal springs">
-  <img src="images/norris-sm.jpg" alt="Photo of Steaming geothermal springs">
-  <img src="images/norris-sm.jpg" alt="Photo of Steaming geothermal springs">
-  <img src="images/norris-sm.jpg" alt="Photo of Steaming geothermal springs">
-  <img src="images/norris-sm.jpg" alt="Photo of Steaming geothermal springs">
-  <img src="images/norris-sm.jpg" alt="Photo of Steaming geothermal springs">
-  <img src="images/norris-sm.jpg" alt="Photo of Steaming geothermal springs">
-  <img src="images/norris-sm.jpg" alt="Photo of Steaming geothermal springs">
-  <img src="images/norris-sm.jpg" alt="Photo of Steaming geothermal springs">
+  <img class="small" src="images/norris-sm.jpg" alt="Photo of Steaming geothermal springs">
+  <img class="small" src="images/norris-sm.jpg" alt="Photo of Steaming geothermal springs">
+  <img class="small" src="images/norris-sm.jpg" alt="Photo of Steaming geothermal springs">
+  <img class="small" src="images/norris-sm.jpg" alt="Photo of Steaming geothermal springs">
+  <img class="small" src="images/norris-sm.jpg" alt="Photo of Steaming geothermal springs">
+  <img class="small" src="images/norris-sm.jpg" alt="Photo of Steaming geothermal springs">
+  <img class="small" src="images/norris-sm.jpg" alt="Photo of Steaming geothermal springs">
+  <img class="small" src="images/norris-sm.jpg" alt="Photo of Steaming geothermal springs">
+  <img class="small" src="images/norris-sm.jpg" alt="Photo of Steaming geothermal springs">
 </section>
+<dialog>
+        <img>
+        <button class="close-viewer">X</button>
+    </dialog>
 </main>
 <footer>©2026 Alisa Ishizaka</footer>
 </div>
