@@ -37,6 +37,10 @@ nav a {
     font-style: italic;
 }
 
+.bookcover {
+    padding-right: 100px;
+}
+
 .bookcover img {
     display: block;
     margin: 0 auto;
