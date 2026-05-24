@@ -17,6 +17,20 @@ nav a {
     color: rgb(159, 0, 0);
 }
 
+.main-nav {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.info {
+    line-height: 2;
+}
+
+ul {
+    list-style-type: none;
+}
+
 .blank {
     height: 40px;
 }
@@ -80,5 +94,9 @@ footer {
     .bookcover {
         padding: 0 40px;
         grid-column: 2/3;
+    }
+
+    .delete {
+        display: none;
     }
 }
