@@ -46,12 +46,18 @@ hr {
     border: none;
     color: gray;
     font-size: 18px;
+    width: 100%;
 }
 
 .search-bar img {
     width: 40px;
     border-left: solid 1px gray;
     padding-left: 8px;
+}
+
+.search-recipe {
+    background-color: white;
+    border: none;
 }
 
 .recipe {
@@ -81,13 +87,12 @@ hr {
     font-size: 36px;
 }
 
-.category {
+.recipe button {
     border: solid 2px gray;
     background-color: rgb(220, 220, 220);
-    width: 70px;
-    height: 30px;
-    text-align: center;
-    align-content: center;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    width: auto;
 }
 
 .description {
