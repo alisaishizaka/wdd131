@@ -1,5 +1,6 @@
 const storageKey = "japanfood-posts";
 const grayPlaceholderImage = `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800"><rect width="800" height="800" fill="#d9d9d9"/><rect x="90" y="90" width="620" height="620" rx="32" fill="#bdbdbd"/></svg>`)}`;
+const cardPlaceholderImage = grayPlaceholderImage;
 const initialPosts = [
     {
         id: 1,
@@ -82,6 +83,41 @@ let posts = JSON.parse(localStorage.getItem(storageKey)) || initialPosts;
 let activePostId = null;
 let visibleCount = 6;
 let isExpanded = false;
+let imageObserver = null;
+
+function initImageObserver() {
+    if (!("IntersectionObserver" in window)) {
+        return;
+    }
+
+    imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+
+            const image = entry.target;
+            const realSrc = image.dataset.src;
+            if (realSrc) {
+                image.src = realSrc;
+                image.removeAttribute("data-src");
+                observer.unobserve(image);
+            }
+        });
+    }, { rootMargin: "200px 0px" });
+}
+
+function observeCardImage(image) {
+    if (!image) return;
+
+    if (imageObserver) {
+        imageObserver.observe(image);
+        return;
+    }
+
+    const realSrc = image.dataset.src;
+    if (realSrc) {
+        image.src = realSrc;
+    }
+}
 
 function getVisiblePosts(filteredPosts) {
     return filteredPosts.slice(0, visibleCount);
@@ -123,7 +159,7 @@ function renderPosts(filter = "") {
         const card = document.createElement("article");
         card.className = "food-post";
         card.innerHTML = `
-            <img src="${post.image}" alt="${post.name}" width="600" height="600" loading="lazy" decoding="async">
+            <img src="${cardPlaceholderImage}" data-src="${post.image}" alt="${post.name}" width="600" height="600" loading="lazy" decoding="async">
             <div class="food-post-info">
                 <h3>${post.name}</h3>
                 <p>${post.category}</p>
@@ -142,6 +178,8 @@ function renderPosts(filter = "") {
             openPopup(post.id);
         });
 
+        const cardImage = card.querySelector("img");
+        observeCardImage(cardImage);
         postsContainer.appendChild(card);
     });
 
