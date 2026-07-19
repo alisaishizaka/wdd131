@@ -346,6 +346,11 @@ footer {
     justify-content: space-between;
 }
 
+.social {
+    display: flex;
+    flex-direction: row;
+}
+
 .social img {
     margin: 0 15px;
 }
@@ -488,6 +493,11 @@ footer img {
     .food-post-examples {
         grid-template-columns: 1fr;
     }
+
+    .social {
+    display: flex;
+    flex-direction: column;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -524,5 +534,10 @@ footer img {
 
     .popup-card {
         padding: 20px;
+    }
+
+    .social {
+    display: flex;
+    flex-direction: column;
     }
 }
